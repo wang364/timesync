@@ -29,7 +29,7 @@ function App() {
     syncUrlToSelectedTimezones(urlTimezonesName);
 
     return () => clearTimeout(timeoutId);
-  }, [urlTimezonesName]);
+  }, [setUrlTimezonesName, syncUrlToSelectedTimezones, urlTimezonesName]);
 
   function resetStatesOnOuterClick(e: MouseEvent) {
     if (

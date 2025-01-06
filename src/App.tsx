@@ -7,10 +7,7 @@ import { setSearchTimezoneNameAtom } from "./atoms/search-timezone-name";
 import { detectAnyDOMsOnMouseEvent } from "./utils";
 import { dismissDatePickerModelAtom } from "./atoms/date";
 import { readWriteUrlTimezonesNameAtom } from "./atoms/hash-url";
-import Navbar from "./components/NavBar";
 import { getCurrentUserTimezoneName } from "./utils/timezones";
-import Descriptions from "./components/Descriptions";
-import MainFooter from "./components/MainFooter";
 
 function App() {
   const [, setSearchTimezoneName] = useAtom(setSearchTimezoneNameAtom);
@@ -41,7 +38,6 @@ function App() {
         "#searched-timezones",
         "#calendar-btn",
         "#calendar",
-        "#theme-btn",
       ])
     ) {
       setSearchTimezoneName("");
@@ -56,14 +52,11 @@ function App() {
       <div className="main-bg-grid"></div>
       <main className=" dark:bg-zinc-900 dark:text-gray-100 h-fit w-full xl:w-full xl:overflow-x-hidden flex flex-col items-start lg:items-center">
         <div className="z-10 w-[1180px] mt-20 mx-8">
-          <Navbar />
           <div className="py-4 px-2 mb-10 border primary_border bg-white dark:bg-zinc-900 rounded-md shadow-sm">
             <TimezonesBoard />
           </div>
         </div>
-        <Descriptions />
       </main>
-      <MainFooter />
     </div>
   );
 }
